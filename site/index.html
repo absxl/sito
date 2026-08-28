@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcello Carletti — Computer Engineering Student</title>
+  <meta name="description" content="Marcello Carletti — Computer Engineering student in Rome, Italy. CV, experience, and projects.">
+  <link rel="icon" href="assets/images/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="boot">
+    <div class="boot-inner">
+      <div id="boot-log"></div>
+      <div id="boot-bar"><div id="boot-fill"></div></div>
+      <div id="boot-status">INITIALIZING…</div>
+    </div>
+  </div>
+  <noscript><style>#boot{display:none!important}main{opacity:1!important}</style></noscript>
+  <div class="statusbar"><span class="dot"></span> SYSTEM ONLINE · carletti.work</div>
+
+  <main>
+    <section class="start">
+      <div class="tile-grid">
+        <a class="tile big tile-profile" href="about.html" data-modal="about" aria-label="About Marcello Carletti">
+          <img class="tile-avatar" src="assets/images/profile.jpg" alt="Marcello Carletti">
+          <span class="tile-name">Marcello Carletti</span>
+          <span class="tile-tag">Computer Engineering Student · Rome, Italy</span>
+          <span class="tile-desc">Second-year Computer Engineering student with experience in software and hardware development, as well as data analysis.</span>
+        </a>
+        <a class="tile wide" href="about.html" data-modal="about">
+          <span class="tile-label">About</span>
+          <span class="tile-sub">Bio · Education</span>
+        </a>
+        <a class="tile wide" href="cv.html" data-modal="cv">
+          <span class="tile-label">CV</span>
+          <span class="tile-sub">Resume · EN / IT</span>
+        </a>
+        <a class="tile wide" href="about.html#projects" data-modal="projects">
+          <span class="tile-label">Projects</span>
+          <span class="tile-sub">My Works</span>
+        </a>
+        <a class="tile wide" href="contact.html" data-modal="work">
+          <span class="tile-label">Work with me</span>
+          <span class="tile-sub">Consulting · Commissions</span>
+        </a>
+        <a class="tile wide" href="contact.html" data-modal="contact">
+          <span class="tile-label">Contact</span>
+          <span class="tile-sub">Email · GitHub</span>
+        </a>
+        <a class="tile" href="privacy.html" data-modal="privacy">
+          <span class="tile-label">Privacy</span>
+          <span class="tile-sub">Cookies</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>© 2026 Marcello Carletti · <a href="privacy.html">Privacy &amp; Cookies</a></div>
+      <div class="legal">This site does not use tracking or advertising cookies.</div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <h3 id="modal-title"></h3>
+        <button class="modal-close" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Templates -->
+  <template id="tpl-about">
+    <div>
+      <p>
+        I'm a second-year Computer Engineering student with experience in software
+        and hardware development, as well as data analysis. I completed a Digital
+        Engineering program, developing a strong technical foundation alongside
+        skills in project management and communication. I've gained professional
+        experience through roles in data analysis and technology-focused projects,
+        contributing to process improvement and operational efficiency.
+      </p>
+      <p class="muted">
+        Recognized for strong problem-solving, teamwork, and communication skills,
+        with experience in structured debate and international contexts.
+      </p>
+
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="role">BSc in Computer Engineering — Politecnico di Milano</div>
+        <div class="meta">2024 – Present · Milan, Italy</div>
+      </div>
+      <div class="entry">
+        <div class="role">Digital Engineering Program — ELIS</div>
+        <div class="meta">2024 – Present</div>
+        <p class="muted">
+          Coursework includes Microsoft tools, Git, Power BI, Linux, Python, Java,
+          HTML, Spring, Angular, SQL, as well as Public Speaking and Project Management.
+        </p>
+      </div>
+      <div class="entry">
+        <div class="role">Scientific High School Diploma — Liceo Scientifico</div>
+        <div class="meta">2018 – 2023</div>
+      </div>
+
+      <h2>Extracurricular Activities</h2>
+      <div class="entry">
+        <div class="role">Italian Model United Nations (IMUN) — Participant</div>
+        <div class="meta">Editions: 2017, 2018, 2021</div>
+        <p class="muted">
+          Awarded Honorable Mention in recognition of outstanding performance in
+          debate and problem-solving. Developed competencies in public speaking,
+          negotiation, and critical analysis of global issues.
+        </p>
+      </div>
+
+      <h2>Location</h2>
+      <p class="muted">Based in Rome, Italy.</p>
+    </div>
+  </template>
+
+  <template id="tpl-projects">
+    <div>
+      <h2>My Works</h2>
+      <div class="card">
+        <h3>Nanotech Research Paper</h3>
+        <p class="muted">Research work on nanotechnology. Full paper available as PDF.</p>
+        <a class="btn ghost" href="assets/downloads/nanotech-1.pdf" download>Download paper (PDF)</a>
+      </div>
+      <div class="card">
+        <h3>FL-Discord</h3>
+        <p class="muted">A lightweight Windows application that displays your FL Studio project as Discord Rich Presence.</p>
+        <a class="btn ghost" href="https://github.com/absxl/FL-Discord" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>tensorflow-example</h3>
+        <p class="muted">Basic tensorflow examples of doing binary classification will show auc result for each epoch. It can deal with both dense or sparse input.</p>
+        <a class="btn ghost" href="https://github.com/absxl/tensorflow-example" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-work">
+    <div>
+      <h2>Work with me</h2>
+      <p>
+        I'm open for any digital consultancy about sites and commissions.
+        To email me, open the contact panel.
+      </p>
+      <a class="btn sm" href="contact.html" data-modal="contact">Contact me</a>
+    </div>
+  </template>
+
+  <template id="tpl-contact">
+    <div>
+      <h2>Contact</h2>
+        <ul class="contact-list">
+          <li><span class="lbl">Email:</span> <a href="mailto:10879687@mail.polimi.it">10879687@mail.polimi.it</a></li>
+          <li><span class="lbl">Email:</span> <a href="mailto:info@carletti.work">info@carletti.work</a></li>
+          <li><span class="lbl">Phone:</span> <a href="tel:+393248685393">+39 3248685393</a></li>
+          <li><span class="lbl">GitHub:</span> <a href="https://github.com/absxl" target="_blank" rel="noopener">absxl</a></li>
+          <li><span class="lbl">LinkedIn:</span> <a href="https://www.linkedin.com/in/marcello.carletti" target="_blank" rel="noopener">marcello.carletti</a></li>
+          <li><span class="lbl">ORCID:</span> <a href="https://orcid.org/0009-0003-6775-3015" target="_blank" rel="noopener">0009-0003-6775-3015</a></li>
+          <li><span class="lbl">OSF:</span> <a href="https://osf.io/zta4q" target="_blank" rel="noopener">zta4q</a></li>
+          <li><span class="lbl">Location:</span> Roma, Italia</li>
+        </ul>
+    </div>
+  </template>
+
+  <template id="tpl-privacy">
+    <div>
+      <h2>Privacy &amp; Cookies</h2>
+      <p>
+        This website (carletti.work) is a static personal site. It does not use
+        analytics, advertising, or tracking cookies, and it does not set any cookies
+        in your browser.
+      </p>
+      <p class="muted">
+        Personal data is collected only when you voluntarily contact me by email.
+        That data is used solely to respond to your message and is not shared with
+        third parties.
+      </p>
+      <p class="muted">
+        For questions about your data, contact
+        <a href="mailto:info@carletti.work">info@carletti.work</a>.
+      </p>
+      <p class="muted">
+        Pursuant to Art. 13 of Italian Legislative Decree 196/2003 and Art. 13 of
+        GDPR 679/16, you may request access to, correction of, or deletion of your
+        personal data at any time.
+      </p>
+    </div>
+  </template>
+
+  <template id="tpl-cv">
+    <div>
+      <div data-lang-toggle class="lang-toggle" style="margin-bottom:18px;">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="it">IT</button>
+      </div>
+
+      <div data-lang-content="en">
+        <p>
+          Computer Engineering student, with experience in software and hardware
+          development and design.
+        </p>
+
+        <h2>Education</h2>
+        <div class="entry">
+          <div class="role">BSc in Computer Engineering — Politecnico di Milano</div>
+          <div class="meta">2024 – Present</div>
+        </div>
+        <div class="entry">
+          <div class="role">Digital Engineering Program — ELIS</div>
+          <div class="meta">2024 – Present</div>
+          <p class="muted">
+            Microsoft tools, Git, Power BI, Linux, Python, Java, HTML, Spring,
+            Angular, SQL, Public Speaking, Project Management.
+          </p>
+        </div>
+        <div class="entry">
+          <div class="role">Scientific High School Diploma — Liceo Scientifico</div>
+          <div class="meta">2018 – 2023</div>
+        </div>
+
+        <h2>Extracurricular</h2>
+        <div class="entry">
+          <div class="role">Italian Model United Nations (IMUN) — Participant</div>
+          <div class="meta">Editions 2017, 2018, 2021</div>
+          <p class="muted">
+            Awarded Honorable Mention in recognition of outstanding performance in
+            debate and problem-solving. Developed competencies in public speaking,
+            negotiation, and critical analysis of global issues.
+          </p>
+        </div>
+
+        <h2>Professional Experience</h2>
+        <div class="entry">
+          <div class="role">Intern — Eni Live</div>
+          <div class="meta">April 2025 – August 2025</div>
+          <ul>
+            <li>Designed and implemented a Python-based algorithm to optimize maritime logistics operations within refinery supply chains.</li>
+            <li>Deployed the solution on AWS, enabling scalable and reliable data processing.</li>
+            <li>Improved logistics efficiency by reducing planning time and enhancing resource allocation (vessel scheduling and turnaround optimization).</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="role">Data Analyst — C.U.P. S.A.S</div>
+          <div class="meta">October 2021 – June 2022</div>
+          <ul>
+            <li>Managed and processed accounting data for multiple client companies, ensuring accuracy and consistency across financial records.</li>
+            <li>Identified and corrected discrepancies in financial statements, reducing reporting errors and improving data reliability.</li>
+            <li>Collaborated with cross-functional teams to streamline accounting review processes, increasing operational efficiency and faster reporting cycles.</li>
+          </ul>
+        </div>
+        <p class="muted" style="font-size:0.82rem;">
+          Autorizzo il trattamento dei miei dati personali ai sensi dell'art. 13 d. lgs.
+          30 giugno 2003 n°196 — "Codice in materia di protezione dei dati personali" e
+          dell'art. 13 GDPR 679/16 — "Regolamento europeo sulla protezione dei dati personali".
+        </p>
+
+        <h2>Competencies</h2>
+        <div class="grid-skills">
+          <div>
+            <h3>Tools</h3>
+            <ul><li>JetBrains</li><li>Git</li><li>Apache Tomcat</li><li>Office</li><li>Bash</li><li>Docker</li></ul>
+          </div>
+          <div>
+            <h3>Programming Languages</h3>
+            <ul><li>HTML, CSS</li><li>Java, JavaScript</li><li>Python</li><li>C, C++</li><li>Vue</li></ul>
+          </div>
+          <div>
+            <h3>Operating Systems</h3>
+            <ul><li>Windows, Windows Server</li><li>Linux</li><li>Arch Linux</li><li>Debian, Fedora</li></ul>
+          </div>
+          <div>
+            <h3>Language Skills</h3>
+            <ul><li>Italian — Native</li><li>English — Native-level</li><li>French — Intermediate</li></ul>
+          </div>
+        </div>
+
+        <h2>Communication Skills</h2>
+        <p class="muted">
+          Effectively convey ideas in formal and informal settings, honed through
+          public speaking, leadership roles in Model United Nations simulations, and
+          hands-on experience in the restoration field.
+        </p>
+
+        <h2>Organization Skills</h2>
+        <p class="muted">
+          Proven ability to manage multiple priorities, meet deadlines, and
+          collaborate efficiently in team environments.
+        </p>
+
+        <h2>Certifications</h2>
+        <div class="entry">
+          <div class="role">Cambridge Advanced (CAE) C1</div>
+          <div class="meta">2021</div>
+        </div>
+
+        <h2>Contacts</h2>
+        <ul class="contact-list">
+          <li><span class="lbl">Phone:</span> <a href="tel:+393248685393">+39 3248685393</a></li>
+          <li><span class="lbl">Email:</span> <a href="mailto:info@carletti.work">info@carletti.work</a></li>
+          <li><span class="lbl">Email:</span> <a href="mailto:10879687@mail.polimi.it">10879687@mail.polimi.it</a></li>
+          <li><span class="lbl">Location:</span> Roma, Italia</li>
+        </ul>
+
+        <p style="margin-top:22px;">
+          <a class="btn" href="assets/downloads/cv-en.pdf" download>Download CV (EN)</a>
+          <a class="btn ghost" href="assets/downloads/cv-it.pdf" download>Download CV (IT)</a>
+        </p>
+      </div>
+
+      <div data-lang-content="it" hidden>
+        <p>
+          Studente di Ingegneria Informatica, con esperienza nello sviluppo e
+          progettazione software e hardware.
+        </p>
+
+        <h2>Formazione</h2>
+        <div class="entry">
+          <div class="role">Laurea in Ingegneria Informatica — Politecnico di Milano</div>
+          <div class="meta">2024 – Corrente</div>
+        </div>
+        <div class="entry">
+          <div class="role">Corso Ingegneria Digitale — ELIS</div>
+          <div class="meta">2024 – Corrente</div>
+          <p class="muted">
+            Strumenti Microsoft, GIT, Power BI, Linux, Python, Java, Html, Spring,
+            Angular, SQL, Public Speaking, Project Management.
+          </p>
+        </div>
+        <div class="entry">
+          <div class="role">Diploma di Maturità — Liceo Scientifico</div>
+          <div class="meta">2018 – 2023</div>
+        </div>
+
+        <h2>Esperienze extracurricolari</h2>
+        <div class="entry">
+          <div class="role">Partecipante Italian Model United Nations (IMUN)</div>
+          <div class="meta">Edizioni 2017, 2018, 2021</div>
+          <p class="muted">
+            Premiato con "Honorable Mention" per l'eccellenza nelle discussioni e nella
+            risoluzione dei problemi. Acquisite competenze nel public speaking, nella
+            negoziazione e nell'analisi critica delle questioni globali.
+          </p>
+        </div>
+
+        <h2>Esperienze professionali</h2>
+        <div class="entry">
+          <div class="role">Data Analyst — C.U.P. S.A.S</div>
+          <div class="meta">10/2021 – 06/2022</div>
+          <ul>
+            <li>Inserimento e gestione di dati contabili per aziende clienti.</li>
+            <li>Verifica e correzione di errori nei registri finanziari.</li>
+            <li>Collaborazione con il team per migliorare l'efficienza del processo di revisione contabile.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="role">Internship — Eni Live</div>
+          <div class="meta">04/2025 – 08/2025</div>
+          <ul>
+            <li>Progetto per ottimizzare la logistica navale nelle raffinerie utilizzando un algoritmo, sviluppato in Python e hosting su AWS.</li>
+          </ul>
+        </div>
+        <p class="muted" style="font-size:0.82rem;">
+          Autorizzo il trattamento dei miei dati personali ai sensi dell'art. 13 d. lgs.
+          30 giugno 2003 n°196 — "Codice in materia di protezione dei dati personali" e
+          dell'art. 13 GDPR 679/16 — "Regolamento europeo sulla protezione dei dati personali".
+        </p>
+
+        <h2>Competenze</h2>
+        <div class="grid-skills">
+          <div>
+            <h3>Tool utilizzati</h3>
+            <ul><li>JetBrains</li><li>GIT</li><li>Apache Tomcat</li><li>Office</li><li>Bash</li></ul>
+          </div>
+          <div>
+            <h3>Linguaggi di programmazione</h3>
+            <ul><li>HTML, CSS</li><li>Java, Python</li><li>C++</li><li>Java</li></ul>
+          </div>
+          <div>
+            <h3>Sistemi Operativi</h3>
+            <ul><li>Windows, Windows Server</li><li>Linux</li><li>Arch Linux</li><li>Debian, Fedora</li></ul>
+          </div>
+          <div>
+            <h3>Competenze linguistiche</h3>
+            <ul><li>Italiano — Madre Lingua</li><li>Inglese — Fluente</li><li>Francese — Intermedio</li></ul>
+          </div>
+        </div>
+
+        <h2>Competenze comunicative</h2>
+        <p class="muted">
+          Buone capacità di comunicazione, maturata durante l'esperienza formativa presso
+          Elis. Esperienza nel public speaking e nella gestione di interazioni in contesti
+          sia formali che informali, grazie alle molteplici esperienze in simulazioni ONU «Imun».
+        </p>
+
+        <h2>Competenze organizzative</h2>
+        <p class="muted">
+          Ottime capacità di gestione sia del tempo che di collaborazione in team,
+          sviluppate durante il percorso formativo presso il Politecnico di Milano e Elis,
+          grazie a esperienze personali e professionali.
+        </p>
+
+        <h2>Certificazioni e attestati</h2>
+        <div class="entry">
+          <div class="role">Cambridge Advanced (CAE) C1</div>
+          <div class="meta">2021</div>
+        </div>
+
+        <h2>Contatti</h2>
+        <ul class="contact-list">
+          <li><span class="lbl">Telefono:</span> <a href="tel:+393248685393">+39 3248685393</a></li>
+          <li><span class="lbl">Luogo:</span> Roma, Italia</li>
+        </ul>
+
+        <p style="margin-top:22px;">
+          <a class="btn" href="assets/downloads/cv-en.pdf" download>Download CV (EN)</a>
+          <a class="btn ghost" href="assets/downloads/cv-it.pdf" download>Download CV (IT)</a>
+        </p>
+      </div>
+    </div>
+  </template>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
